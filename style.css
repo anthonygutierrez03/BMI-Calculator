@@ -74,3 +74,30 @@ button:hover {
   border-radius: 8px;
   font-weight: bold;
 }
+
+.result-box {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 1.1em;
+}
+
+.result-box.underweight {
+  background: #f1c40f;
+  color: #fff;
+}
+
+.result-box.normal {
+  background: #2ecc71;
+  color: #fff;
+}
+
+.result-box.overweight {
+  background: #e67e22;
+  color: #fff;
+}
+
+.result-box.obese {
+  background: #e74c3c;
+  color: #fff;
+}
