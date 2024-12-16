@@ -4,8 +4,20 @@ function calculateBMI() {
   
   if (weight > 0 && height > 0) {
     const bmi = weight / (height * height);
-    const resultText = `Your BMI is ${bmi.toFixed(2)}.`;
-    document.getElementById('result').textContent = resultText;
+    let category = '';
+
+    if (bmi < 18.5) {
+      category = 'Underweight';
+    } else if (bmi < 24.9) {
+      category = 'Normal weight';
+    } else if (bmi < 29.9) {
+      category = 'Overweight';
+    } else {
+      category = 'Obese';
+    }
+
+    const resultText = `Your BMI is <span class="result-box">${bmi.toFixed(2)}</span>. You are classified as <strong>${category}</strong>.`;
+    document.getElementById('result').innerHTML = resultText;
   } else {
     document.getElementById('result').textContent = "Please enter valid values.";
   }
