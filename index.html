@@ -1,44 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BMI Calculator</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator - The Realm of Health</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="hero">
-      <h1>BMI Calculator</h1>
-      <p>Your Body Mass Index, made simple.</p>
+    <div class="container">
+        <header>
+            <h1>Welcome to the Realm of Health</h1>
+            <p>Let us uncover thine Body Mass Index, noble traveler. Enter thy weight and height below.</p>
+        </header>
+
+        <form id="bmi-form">
+            <label for="weight">Thy weight (in kilograms):</label>
+            <input type="number" id="weight" placeholder="e.g. 70" required>
+
+            <label for="height">Thy height (in meters):</label>
+            <input type="number" id="height" placeholder="e.g. 1.75" step="0.01" required>
+
+            <button type="submit">Reveal the BMI</button>
+        </form>
+
+        <div id="result">
+            <p id="bmi-result"></p>
+        </div>
     </div>
-  </header>
 
-  <main>
-    <section class="container">
-      <form id="bmi-form">
-        <div class="input-group">
-          <label for="weight">Enter your weight (kg):</label>
-          <input type="number" id="weight" placeholder="e.g., 70" required>
-        </div>
+    <script>
+        document.getElementById("bmi-form").addEventListener("submit", function(event) {
+            event.preventDefault();
 
-        <div class="input-group">
-          <label for="height">Enter your height (meters):</label>
-          <input type="number" id="height" placeholder="e.g., 1.75" required>
-        </div>
+            let weight = parseFloat(document.getElementById("weight").value);
+            let height = parseFloat(document.getElementById("height").value);
 
-        <button type="button" onclick="calculateBMI()">Calculate BMI</button>
-      </form>
+            let bmi = weight / (height * height);
+            let resultText = '';
 
-      <div id="result"></div>
-    </section>
-  </main>
+            if (bmi < 18.5) {
+                resultText = `Alas, thy BMI is ${bmi.toFixed(2)}. Thou art underweight. A feast might serve thee well!`;
+            } else if (bmi >= 18.5 && bmi < 24.9) {
+                resultText = `Thy BMI is ${bmi.toFixed(2)}. Thou art of sound stature, a noble figure indeed!`;
+            } else if (bmi >= 25 && bmi < 29.9) {
+                resultText = `Thy BMI is ${bmi.toFixed(2)}. Thou hast ventured into the realm of excess. Perhaps a quest for balance awaits.`;
+            } else {
+                resultText = `Thy BMI is ${bmi.toFixed(2)}. The scales of fate say thou must embark upon a journey to health.`;
+            }
 
-  <footer>
-    <p>Made with ❤️ by Anthony Gutierrez | Hosted on <a href="https://vercel.com" target="_blank">Vercel</a></p>
-  </footer>
-
-  <script src="script.js"></script>
+            document.getElementById("bmi-result").textContent = resultText;
+        });
+    </script>
 </body>
 </html>
