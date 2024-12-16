@@ -1,51 +1,43 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2820
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f3f4f6;
+  margin: 0;
+  padding: 0;
+}
 
-\f0\fs24 \cf0 body \{\
-  font-family: Arial, sans-serif;\
-  text-align: center;\
-  background-color: #f3f4f6;\
-  margin: 0;\
-  padding: 0;\
-\}\
-\
-.container \{\
-  margin-top: 100px;\
-  background: #fff;\
-  padding: 20px;\
-  border-radius: 8px;\
-  width: 300px;\
-  margin-left: auto;\
-  margin-right: auto;\
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\
-\}\
-\
-input, button \{\
-  display: block;\
-  margin: 10px auto;\
-  padding: 10px;\
-  width: 90%;\
-  border: 1px solid #ccc;\
-  border-radius: 4px;\
-\}\
-\
-button \{\
-  background-color: #007bff;\
-  color: white;\
-  border: none;\
-  cursor: pointer;\
-\}\
-\
-button:hover \{\
-  background-color: #0056b3;\
-\}\
-\
-#result \{\
-  margin-top: 20px;\
-  font-size: 18px;\
-\}\
+.container {
+  margin-top: 100px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input, button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 18px;
 }
